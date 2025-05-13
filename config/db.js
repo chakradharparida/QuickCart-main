@@ -1,4 +1,4 @@
-import mongoose, { connection } from "mongoose";
+import mongoose from "mongoose";
 
 let cached = global.mongoose
 
@@ -14,7 +14,7 @@ async function connectDB() {
 
     if (!cached.promise) {
         const opts = {
-            BufferCommands:false
+            bufferCommands:false
         }
 
         cached.promise = mongoose.connect(`${process.env.MONGODB_URI}/quickcart`,opts).then(mongoose => {
