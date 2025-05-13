@@ -1,8 +1,8 @@
-import { Inngest } from "inngest";
+import { inngest } from "inngest";
 import connectDB from "./db";
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ id: "quickcart-next" });
+export const inngest = new inngest({ id: "quickcart-next" });
 
 //Innght function to save user data to a database 
 export const syncUserCreation = inngest.createFunction(
@@ -24,7 +24,7 @@ export const syncUserCreation = inngest.createFunction(
 )
 
 //Innght function to save user data to a database
-export  const syncUserUpdation = Inngest.createFunction(
+export  const syncUserUpdation = inngest.createFunction(
     {
         id:'update-user-from-clerk'
     },
@@ -45,7 +45,7 @@ export  const syncUserUpdation = Inngest.createFunction(
 
 //Innght function to delete user data from a database
 
-export const syncUserDeletion = Inngest.createFunction(
+export const syncUserDeletion = inngest.createFunction(
     {
         id:'delete-user-from-clerk'
     },
