@@ -24,11 +24,11 @@ export const syncUserCreation = inngest.createFunction(
 )
 
 //Innght function to save user data to a database
-export  const syncUserUpdation = InngestFunction.createFunction(
+export  const syncUserUpdation = Inngest.createFunction(
     {
         id:'update-user-from-clerk'
     },
-    {Event :'clerk/user.updated'},
+    {event :'clerk/user.updated'},
     async ({event}) => {
         const { id, first_name, last_name,email_addresses, image_url } = event.data 
         const userData = {
